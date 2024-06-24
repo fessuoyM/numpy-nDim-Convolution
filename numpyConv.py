@@ -8,7 +8,7 @@ class NumpyConv:
         #Note that when an argument is passed in for pad, a "truncated" convolution will occur in which only fully overlapped regions are convolved. This feature is more usefull in the convolution of higher dimensions
 
         #Ensure smaller array is h, usually the kernal/filter
-        if h.shape[-1]>y.shape[-1]: temp=h; h=y; y=temp
+        if h.shape[-1]>y.shape[-1]: h, y = y, h
 
         #nDim is calculated if its not passed in.
         if nDim is None:
